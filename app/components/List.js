@@ -9,6 +9,8 @@ const styles = StyleSheet.create({
 export default class List extends Component {
 
   render() {
-    return null
+    return(
+      <ScrollView></ScrollView>
+    )
   }
 }

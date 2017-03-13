@@ -3,6 +3,8 @@ import { View, ScrollView, StyleSheet, TextInput, Text } from 'react-native'
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
 import Title from '../components/Title'
+import Footer from '../components/Footer'
+import List from '../components/List'
 
 import { actionCreators } from '../redux/todoRedux'
 
@@ -26,8 +28,16 @@ class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Title></Title>
+        <Title>
+          Super Titre
+        </Title>
 
+        <List>
+
+        </List>  
+        <Footer>
+          Remove completed items
+        </Footer>
       </View>
     )
   }

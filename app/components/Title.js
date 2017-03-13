@@ -4,20 +4,27 @@ import { View, Text, StyleSheet } from 'react-native'
 export default class Title extends Component {
 
   render() {
+    const { children } = this.props
+
     return (
-      <Text style={styles.title}>
-        Super Title
-      </Text>
-      )
+      <View style={styles.header}>
+        <Text style={styles.title}>
+          {children}
+        </Text>
+      </View>
+    )
   }
 }
 
 const styles = StyleSheet.create({
 
-  title: {
-    padding: 15,
+  header: {
+    padding: 30,
     marginBottom: 5,
     backgroundColor: 'lightsteelblue',
+  },
+
+  title: {
     textAlign: 'center',
     color: 'white',
     fontWeight: 'bold',
