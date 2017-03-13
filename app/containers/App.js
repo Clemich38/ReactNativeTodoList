@@ -5,14 +5,9 @@ import { Actions } from 'react-native-router-flux'
 import Title from '../components/Title'
 import Footer from '../components/Footer'
 import List from '../components/List'
+import Input from '../components/Input'
 
 import { actionCreators } from '../redux/todoRedux'
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-})
 
 const mapStateToProps = (state) => ({
   items: state.items,
@@ -26,13 +21,15 @@ class App extends Component {
   }
 
   render() {
+    const { items } = this.props
     return (
       <View style={styles.container}>
         <Title>
           Super Titre
         </Title>
+        <Input placeholder='New Item...'></Input>
 
-        <List>
+        <List list={items}>
 
         </List>  
         <Footer>
@@ -42,5 +39,11 @@ class App extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+})
 
 export default connect(mapStateToProps)(App)

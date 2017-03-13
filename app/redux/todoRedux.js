@@ -5,7 +5,7 @@ export const actionCreators = {
 }
 
 const initialState = {
-  items: [],
+  items: ['First item', 'Second item'],
 }
 
 export const reducer = (state = initialState, action) => {
