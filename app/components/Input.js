@@ -11,12 +11,12 @@ export default class Input extends Component {
   onChangeText = (text) => this.setState({ text })
 
   onSubmit = () => {
-    // const { onSubmitEditing } = this.props
+    const { onSubmitEditing } = this.props
     const { text } = this.state
 
     if (text)
     {
-      // onSubmitEditing(text)
+      onSubmitEditing(text)
       this.setState({ text: '' })
     }
   }

@@ -20,6 +20,11 @@ class App extends Component {
     dispatch: PropTypes.func.isRequired,
   }
 
+  onAddItem = (text) => {
+    const { dispatch } = this.props
+    dispatch(actionCreators.addItem(text));
+  }
+
   render() {
     const { items } = this.props
     return (
@@ -27,7 +32,10 @@ class App extends Component {
         <Title>
           Super Titre
         </Title>
-        <Input placeholder='New Item...'></Input>
+        <Input placeholder='New Item...'
+               onSubmitEditing={this.onAddItem}
+          >
+        </Input>
 
         <List list={items}>
 
