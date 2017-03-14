@@ -6,19 +6,23 @@ import Checkbox from './Checkbox'
 
 export default class List extends Component {
 
-  renderItem = (text, i) => {
+  renderItem = (item, i) => {
 
     return (
-      <TouchableOpacity style={styles.item} key={i} >
-        <Text style={styles.itemtext} >{i} - {text}</Text>
-      </TouchableOpacity>
+      <View style={styles.item} key={i} >
+        <Text style={styles.itemtext} >{i} - {item.label}</Text>
+        <View style={styles.rightSection}>
+          <Checkbox
+          />
+        </View>
+      </View>
     )
   }
 
   render() {
     const { list } = this.props
     return(
-      <ScrollView>
+      <ScrollView style={styles.container}>
         {list.map(this.renderItem)}
       </ScrollView>
     )
@@ -27,8 +31,13 @@ export default class List extends Component {
 
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
 
   item: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     padding: 10,
     marginTop: 1,
     marginBottom: 1,
@@ -38,6 +47,12 @@ const styles = StyleSheet.create({
   itemtext: {
     color: 'lightslategrey',
   },
+
+  rightSection: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
 })
 
 

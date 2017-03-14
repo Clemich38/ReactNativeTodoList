@@ -1,15 +1,24 @@
 const types = {
   ADD_ITEM: 'ADD_ITEM',
+  REMOVE_ITEM: 'REMOVE_ITEM',
+  TOGGLE_ITEM_COMPLETED: 'TOGGLE_ITEM_COMPLETED',
 }
 
 export const actionCreators = {
   addItem: (item) => {
     return { type: types.ADD_ITEM, payload: item }
+  },
+  removeItem: (index) => {
+    return { type: types.REMOVE_ITEM, payload: index }
+  },
+  toggleItemCompleted: (index) => {
+    return { type: types.TOGGLE_ITEM_COMPLETED, payload: index }
   }
 }
 
 const initialState = {
-  items: ['First item', 'Second item'],
+  items: [{ label: 'First Item', completed: false },
+          { label: 'Second Item', completed: false }],
 }
 
 export const reducer = (state = initialState, action) => {
@@ -20,7 +29,7 @@ export const reducer = (state = initialState, action) => {
     case types.ADD_ITEM: {
       return {
         ...state,
-        items: [payload, ...items],
+        items: [{ label: payload, completed: false },, ...items],
       }
     }
     default: {
