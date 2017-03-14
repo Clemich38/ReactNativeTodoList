@@ -18,7 +18,7 @@ export const actionCreators = {
 
 const initialState = {
   items: [{ label: 'First Item', completed: false },
-          { label: 'Second Item', completed: false }],
+          { label: 'Second Item', completed: true }],
 }
 
 export const reducer = (state = initialState, action) => {

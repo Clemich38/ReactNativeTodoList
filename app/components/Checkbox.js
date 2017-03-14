@@ -5,9 +5,9 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
 export default class Checkbox extends Component {
   render() {
-    const { checked } = this.props
+    const { checked, onToggle } = this.props
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onToggle}>
         <View style={styles.box}>
           {checked && <View style={styles.inner} />}
         </View>

@@ -7,12 +7,14 @@ import Checkbox from './Checkbox'
 export default class List extends Component {
 
   renderItem = (item, i) => {
+    const { onToggle } = this.props
 
     return (
       <View style={styles.item} key={i} >
         <Text style={styles.itemtext} >{i} - {item.label}</Text>
         <View style={styles.rightSection}>
-          <Checkbox checked="true"
+          <Checkbox checked={item.completed}
+                    onToggle={ () => onToggle(i) }
           />
         </View>
       </View>

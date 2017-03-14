@@ -25,6 +25,11 @@ class App extends Component {
     dispatch(actionCreators.addItem(text));
   }
 
+  onToggleItemCompleted = (index) => {
+    const { dispatch } = this.props
+    dispatch(actionCreators.toggleItemCompleted(index));
+  }
+
   render() {
     const { items } = this.props
     return (
@@ -37,7 +42,8 @@ class App extends Component {
           >
         </Input>
 
-        <List list={items}>
+        <List list={items}
+              onToggle={this.onToggleItemCompleted}>
 
         </List>  
         <Footer>
