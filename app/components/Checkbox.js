@@ -5,9 +5,11 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
 export default class Checkbox extends Component {
   render() {
+    const { checked } = this.props
     return (
       <TouchableOpacity>
         <View style={styles.box}>
+          {checked && <View style={styles.inner} />}
         </View>
       </TouchableOpacity>
     )
@@ -24,6 +26,6 @@ const styles = StyleSheet.create({
   inner: {
     flex: 1,
     margin: 2,
-    backgroundColor: 'rgba(0,0,0,0.8)',
+    backgroundColor: 'lightslategrey',
   },
 })

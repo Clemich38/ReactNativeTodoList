@@ -32,6 +32,17 @@ export const reducer = (state = initialState, action) => {
         items: [{ label: payload, completed: false },, ...items],
       }
     }
+    case types.TOGGLE_ITEM_COMPLETED: {
+      return {
+        ...state,
+        items: items.map((item, i) => {
+          if (i === payload)
+            return { label: item.label, completed: !item.completed };
+          else
+            return item;
+        }),
+      }
+    }
     default: {
       return state
     }

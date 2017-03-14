@@ -12,7 +12,7 @@ export default class List extends Component {
       <View style={styles.item} key={i} >
         <Text style={styles.itemtext} >{i} - {item.label}</Text>
         <View style={styles.rightSection}>
-          <Checkbox
+          <Checkbox checked="true"
           />
         </View>
       </View>
