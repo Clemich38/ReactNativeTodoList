@@ -29,7 +29,7 @@ export const reducer = (state = initialState, action) => {
     case types.ADD_ITEM: {
       return {
         ...state,
-        items: [{ label: payload, completed: false },, ...items],
+        items: [{ label: payload, completed: false }, ...items],
       }
     }
     case types.TOGGLE_ITEM_COMPLETED: {
